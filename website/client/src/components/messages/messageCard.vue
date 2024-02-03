@@ -1,5 +1,10 @@
 <template>
-  <div class="card">
+  <div
+    class="card"
+    :class="{
+      'system-message': isSystemMessage
+    }"
+  >
     <div
       class="message-card"
       :class="{
@@ -50,7 +55,7 @@
           right="right"
           variant="flat"
           toggle-class="with-icon"
-          class="card-menu"
+          class="card-menu no-min-width"
           :no-caret="true"
         >
           <template #button-content>
@@ -132,7 +137,7 @@
         </div>
 
         <like-button
-          v-if="msg.id && !privateMessageMode && !isSystemMessage"
+          v-if="msg.id && !isSystemMessage"
           class="mt-75"
           :liked-by-current-user="msg.likes[user._id]"
           :like-count="likeCount"
@@ -175,6 +180,7 @@
 
 .card {
   background: transparent !important;
+  margin-bottom: 1.2rem !important;
 }
 
 .message-card {
@@ -258,6 +264,10 @@ hr {
 .reported {
   margin-top: 18px;
   color: $red-50;
+}
+
+.selectListItem:not(:hover) .svg-icon.icon-16.color {
+  color: #{$gray-100}
 }
 
 .custom-hover--red {
