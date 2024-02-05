@@ -61,7 +61,18 @@ export async function createChallenge (user, req, res) {
   }
   req.body.leader = user._id;
   req.body.official = !!(user.hasPermission('challengeAdmin') && req.body.official);
+  const categories = req.body.categories || [];
+  categories.forEach(category => {
+    if (category.slug === 'habitica_official' && !user.hasPermission('challengeAdmin')) {
+      throw new NotAuthorized(res.t('noPrivAccess'));
+    } else if (category.slug === 'habitica_official' && user.hasPermission('challengeAdmin')) {
+      console.log(req.body.official);
+      console.log("setting official to true");
+      req.body.official = true;
+    }
+  });
   const challenge = new Challenge(Challenge.sanitize(req.body));
+  console.log(challenge);
 
   // First validate challenge so we don't save group if it's invalid (only runs sync validators)
   const challengeValidationErrors = challenge.validateSync();
