@@ -6,7 +6,7 @@ import {
 } from '../../../../helpers/api-integration/v3';
 import { MAX_SUMMARY_SIZE_FOR_CHALLENGES } from '../../../../../website/common/script/constants';
 
-describe.only('POST /challenges', () => {
+describe('POST /challenges', () => {
   it('returns error when group is empty', async () => {
     const user = await generateUser();
 
@@ -333,7 +333,7 @@ describe.only('POST /challenges', () => {
     });
 
     it('sets categories for challenges', async () => {
-      const testCategory = {"_id": "65c1172997c0b24600371ea9", slug: 'test', name: 'Test'};
+      const testCategory = { _id: '65c1172997c0b24600371ea9', slug: 'test', name: 'Test' };
       const challenge = await groupLeader.post('/challenges', {
         group: group._id,
         name: 'Test Challenge',
@@ -347,7 +347,7 @@ describe.only('POST /challenges', () => {
     });
 
     it('does not set habitica_official category for non-admins', async () => {
-      const testCategory = {"_id": "65c1172997c0b24600371ea9", slug: 'habitica_official', name: 'habitica_official'};
+      const testCategory = { _id: '65c1172997c0b24600371ea9', slug: 'habitica_official', name: 'habitica_official' };
       await expect(groupLeader.post('/challenges', {
         group: group._id,
         name: 'Test Challenge',
@@ -366,8 +366,8 @@ describe.only('POST /challenges', () => {
           challengeAdmin: true,
         },
       });
-      
-      const testCategory = {"_id": "65c1172997c0b24600371ea9", slug: 'habitica_official', name: 'habitica_official'};
+
+      const testCategory = { _id: '65c1172997c0b24600371ea9', slug: 'habitica_official', name: 'habitica_official' };
       const challenge = await groupLeader.post('/challenges', {
         group: group._id,
         name: 'Test Challenge',
@@ -379,15 +379,14 @@ describe.only('POST /challenges', () => {
       expect(updatedChallenge.categories).to.eql([testCategory]);
     });
 
-
     it('sets official if the habitica_official category is set for admins', async () => {
       await groupLeader.updateOne({
         permissions: {
           challengeAdmin: true,
         },
       });
-      
-      const testCategory = {"_id": "65c1172997c0b24600371ea9", slug: 'habitica_official', name: 'habitica_official'};
+
+      const testCategory = { _id: '65c1172997c0b24600371ea9', slug: 'habitica_official', name: 'habitica_official' };
       const challenge = await groupLeader.post('/challenges', {
         group: group._id,
         name: 'Test Challenge',
