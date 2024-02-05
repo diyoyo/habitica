@@ -12,7 +12,10 @@
         v-for="itemType in itemTypes"
         :key="itemType"
       >
-        <div class="accordion-group" v-if="collatedItemData[itemType]">
+        <div
+          v-if="collatedItemData[itemType]"
+          class="accordion-group"
+        >
           <h4
             class="expand-toggle"
             :class="{'open': expandItemType[itemType]}"
@@ -32,13 +35,13 @@
                     class="enableValueChange"
                     @click="enableValueChange(item)"
                   >
-                  <span :class="item.value ? 'owned' : 'not-owned'">
-                    {{ item.value }}
-                  </span>
+                    <span :class="item.value ? 'owned' : 'not-owned'">
+                      {{ item.value }}
+                    </span>
                     :
                     <span :class="{ ownedItem: !item.neverOwned }">{{ item.text }}</span>
                   </span>
-                    {{  item.set }}
+                  {{ item.set }}
 
                   <div
                     v-if="item.modified"
@@ -123,7 +126,7 @@ function collateItemData (self) {
     if (itemType.indexOf('hair') === 0) {
       const hairType = itemType.split('.')[1];
       allItems = content.appearances.hair[hairType];
-      if (self.hero.purchased.hair) {
+      if (self.hero.purchased && self.hero.purchased.hair) {
         ownedItems = self.hero.purchased.hair[hairType] || {};
       } else {
         ownedItems = {};
