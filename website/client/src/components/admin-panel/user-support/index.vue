@@ -136,8 +136,8 @@ export default {
     ContributorDetails,
     Transactions,
     SubscriptionAndPerks,
-    Achievements,
     UserProfile,
+    Achievements,
   },
   mixins: [userStateMixin],
   beforeRouteUpdate (to, from, next) {
