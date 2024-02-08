@@ -7,12 +7,12 @@
       >
         <div
           v-if="$route.name === 'plans'"
-          class="logo svg-icon svg color purple"
-          v-html="icons.melior"
+          class="habitica-logo svg-icon svg color purple"
+          v-html="icons.habiticaLogo"
         ></div>
         <div
           v-else
-          class="logo svg-icon svg"
+          class="habitica-logo svg-icon svg"
           v-html="icons.habiticaLogo"
         ></div>
       </router-link>
@@ -146,6 +146,13 @@
     }
   }
 
+  .habitica-logo {
+    width: 175px;
+    height: 64px;
+    margin: 28px auto 0px auto;
+    z-index: 0;
+  }
+
   .home-header, .home-header .btn {
     font-family: 'Varela Round', sans-serif;
     font-weight: normal;
@@ -171,12 +178,14 @@
       color: $white;
       height: 32px;
       object-fit: contain;
-      width: 32px;
     }
 
     .purple {
       color: $purple-100;
-      z-index: 0;
+    }
+
+    .white {
+      color: $white;
     }
   }
 
@@ -269,6 +278,7 @@
 <script>
 import habiticaLogo from '@/assets/svg/logo-horizontal.svg';
 import purpleLogo from '@/assets/svg/purple-logo.svg';
+import melior from '@/assets/svg/melior.svg';
 
 export default {
   data () {
@@ -276,6 +286,7 @@ export default {
       icons: Object.freeze({
         habiticaLogo,
         purpleLogo,
+        melior,
       }),
     };
   },
