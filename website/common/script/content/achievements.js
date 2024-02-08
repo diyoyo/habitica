@@ -218,7 +218,7 @@ const animalSetAchievs = {
     icon: 'achievement-rodentRuler',
     titleKey: 'achievementRodentRuler',
     textKey: 'achievementRodentRulerText',
-    release: '2024-03-19T08:00-05:00',
+    release: '2024-02-08T08:00-05:00', // canonical 03-19
   },
   roughRider: {
     icon: 'achievement-roughRider',
