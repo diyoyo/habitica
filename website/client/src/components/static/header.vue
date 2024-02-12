@@ -7,12 +7,12 @@
       >
         <div
           v-if="$route.name === 'plans'"
-          class="habitica-logo svg-icon svg color purple"
-          v-html="icons.habiticaLogo"
+          class="habitica-logo svg-icon"
+          v-html="icons.purpleLogo"
         ></div>
         <div
           v-else
-          class="habitica-logo svg-icon svg"
+          class="habitica-logo svg-icon"
           v-html="icons.habiticaLogo"
         ></div>
       </router-link>
@@ -142,14 +142,14 @@
   @media only screen and (max-width : 750px) {
     .login-button {
       margin: 0 auto !important;
-      margin-top: 1.8em !important;
+      margin-top: 18px !important;
     }
   }
 
   .habitica-logo {
-    width: 175px;
     height: 64px;
     margin: 28px auto 0px auto;
+    width: 175px;
     z-index: 0;
   }
 
@@ -178,14 +178,6 @@
       color: $white;
       height: 32px;
       object-fit: contain;
-    }
-
-    .purple {
-      color: $purple-100;
-    }
-
-    .white {
-      color: $white;
     }
   }
 
@@ -277,7 +269,7 @@
 
 <script>
 import habiticaLogo from '@/assets/svg/logo-horizontal.svg';
-import purpleLogo from '@/assets/svg/purple-logo.svg';
+import purpleLogo from '@/assets/svg/logo-horizontal-purple.svg';
 import melior from '@/assets/svg/melior.svg';
 
 export default {
