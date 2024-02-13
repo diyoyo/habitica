@@ -463,6 +463,7 @@ const armor = {
     set: 'whiteLoungeWear',
   },
   hattersSuit: {
+    con: 9,
     set: 'hatterSet',
   },
 };
@@ -963,6 +964,7 @@ const head = {
     set: 'whiteLoungeWear',
   },
   hattersTopHat: {
+    per: 10,
     set: 'hatterSet',
   },
 };
@@ -1298,6 +1300,7 @@ const shield = {
     set: 'whiteLoungeWear',
   },
   hattersPocketWatch: {
+    int: 9,
     set: 'hatterSet',
   },
 };
@@ -1780,7 +1783,7 @@ const releaseDates = {
   greenTrapper: '2023-12-05T08:00-05:00',
   schoolUniform: '2024-01-04T08:00-05:00',
   whiteLoungeWear: '2024-02-06T08:00-05:00',
-  hatterSet: '2024-02-06T08:00-05:00', // test date canonical is 03-05
+  hatterSet: '2024-03-05T08:00-05:00',
 };
 
 forEach({
