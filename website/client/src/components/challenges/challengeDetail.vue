@@ -223,6 +223,7 @@
         </button>
       </div>
       <div
+        v-if="!challenge.official"
         class="button-container"
       >
         <button
