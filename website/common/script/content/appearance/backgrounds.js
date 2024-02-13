@@ -660,7 +660,7 @@ const releaseDates = {
   backgrounds122023: '2023-12-05T08:00-05:00',
   backgrounds012024: '2024-01-04T08:00-05:00',
   backgrounds022024: '2024-02-06T08:00-05:00',
-  backgrounds032024: '2024-03-05T08:00-05:00',
+  backgrounds032024: '2024-02-05T08:00-05:00', // canonical 03-05
 };
 
 const flat = {};
