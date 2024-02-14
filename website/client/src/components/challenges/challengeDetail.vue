@@ -470,7 +470,7 @@ export default {
     },
     isOfficial () {
       return !this.challenge || this.challenge.official
-        || this.challenge.categories.some(category => category.name === 'habitica_official');
+        || this.challenge.categories?.some(category => category.name === 'habitica_official');
     },
   },
   watch: {
