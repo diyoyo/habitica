@@ -1773,6 +1773,7 @@ const weapon = {
     set: 'schoolUniform',
   },
   hattersShears: {
+    str: 10,
     set: 'hatterSet',
   },
 };
