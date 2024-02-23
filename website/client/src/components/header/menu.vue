@@ -338,14 +338,14 @@
         <div class="currency-tray form-inline">
           <div
             v-if="userHourglasses > 0"
-            class="item-with-icon hourglass"
+            class="item-with-icon"
           >
             <div
               v-b-tooltip.hover.bottom="$t('mysticHourglassesTooltip')"
               class="top-menu-icon svg-icon hg-margin"
               v-html="icons.hourglasses"
             ></div>
-            <span>{{ userHourglasses }}</span>
+            <span class="value">{{ userHourglasses }}</span>
           </div>
           <div class="item-with-icon gem">
             <a
@@ -356,7 +356,7 @@
               @click.prevent="showBuyGemsModal()"
               v-html="icons.gem"
             ></a>
-            <span>{{ userGems }}</span>
+            <span class="value">{{ userGems }}</span>
           </div>
           <div class="item-with-icon gold">
             <div
@@ -365,13 +365,13 @@
               :aria-label="$t('gold')"
               v-html="icons.gold"
             ></div>
-            <span>{{ Math.floor(user.stats.gp * 100) / 100 }}</span>
+            <span class="value">{{ Math.floor(user.stats.gp * 100) / 100 }}</span>
           </div>
         </div>
-        <div class="form-inline desktop-only  ">
+        <div class="form-inline desktop-only">
           <a
             v-b-tooltip.hover.bottom="$t('sync')"
-            class="item-with-icon"
+            class="item-with-icon sync"
             role="link"
             :aria-label="$t('sync')"
             tabindex="0"
@@ -383,8 +383,8 @@
               v-html="icons.sync"
             ></div>
           </a>
-          <notification-menu class="item-with-icon" />
-          <user-dropdown class="item-with-icon" />
+          <notification-menu class="item-with-icon notification-menu" />
+          <user-dropdown class="item-with-icon user-menu" />
         </div>
       </b-collapse>
     </b-navbar>
@@ -441,7 +441,7 @@ body.modal-open #habitica-menu {
 
       .currency-tray {
         margin-left: auto;
-        margin-right: 48px;
+        margin-right: 0px;
       }
 
       .topbar-item {
@@ -667,8 +667,8 @@ body.modal-open #habitica-menu {
       display: inline-block;
       width: 24px;
       height: 24px;
-      margin-right: 12px;
-      margin-left: 12px;
+      margin-right: 0px;
+      margin-left: 0px;
     }
   }
 
@@ -699,27 +699,39 @@ body.modal-open #habitica-menu {
     }
   }
 
-  .hourglass {
-    width:80px;
-  }
-
   .hg-margin {
-    margin-right: 8px;
+    margin-right: -4px !important;
   }
 
-  .gem {
-    width: 84px;
-    .gem:hover {
-      cursor: pointer;
+  .gem:hover {
+    cursor: pointer;
 
-      & ::v-deep path:nth-child(1) {
-        animation: rotateGemColors 3s linear infinite alternate;
-      }
+    & ::v-deep path:nth-child(1) {
+      animation: rotateGemColors 3s linear infinite alternate;
     }
+  }
+  .value {
+    margin-right: 24px;
+    margin-left: 8px;
+  }
+
+  .sync {
+    margin-left: 0px;
+    margin-right: 24px;
+  }
+
+  .notification-menu {
+    margin-left: 0px;
+    margin-right: 24px;
+  }
+
+  .user-menu {
+    margin-left: 0px;
+    margin-right: 12px;
   }
 
   .gold {
-    width: 88px;
+    margin-right: 12px !important;
   }
 
   .message-count {
