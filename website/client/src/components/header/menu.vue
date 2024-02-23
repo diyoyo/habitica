@@ -16,11 +16,13 @@
         class="brand"
         aria-label="Habitica"
       >
-        <div
+        <router-link to="/">
+          <div
           class="logo svg-icon svg color gryphon"
           v-html="icons.melior"
-        ></div>
-        <div class="svg-icon"></div>
+          ></div>
+          <div class="svg-icon"></div>
+        </router-link>
       </b-navbar-brand>
       <b-navbar-toggle
         class="menu-toggle"
@@ -336,16 +338,16 @@
         <div class="currency-tray form-inline">
           <div
             v-if="userHourglasses > 0"
-            class="item-with-icon"
+            class="item-with-icon hourglass"
           >
             <div
               v-b-tooltip.hover.bottom="$t('mysticHourglassesTooltip')"
-              class="top-menu-icon svg-icon"
+              class="top-menu-icon svg-icon hg-margin"
               v-html="icons.hourglasses"
             ></div>
             <span>{{ userHourglasses }}</span>
           </div>
-          <div class="item-with-icon">
+          <div class="item-with-icon gem">
             <a
               v-b-tooltip.hover.bottom="$t('gems')"
               class="top-menu-icon svg-icon gem"
@@ -366,7 +368,7 @@
             <span>{{ Math.floor(user.stats.gp * 100) / 100 }}</span>
           </div>
         </div>
-        <div class="form-inline desktop-only">
+        <div class="form-inline desktop-only  ">
           <a
             v-b-tooltip.hover.bottom="$t('sync')"
             class="item-with-icon"
@@ -439,6 +441,7 @@ body.modal-open #habitica-menu {
 
       .currency-tray {
         margin-left: auto;
+        margin-right: 48px;
       }
 
       .topbar-item {
@@ -696,12 +699,27 @@ body.modal-open #habitica-menu {
     }
   }
 
-  .gem:hover {
-    cursor: pointer;
+  .hourglass {
+    width:80px;
+  }
 
-    & ::v-deep path:nth-child(1) {
-      animation: rotateGemColors 3s linear infinite alternate;
+  .hg-margin {
+    margin-right: 8px;
+  }
+
+  .gem {
+    width: 84px;
+    .gem:hover {
+      cursor: pointer;
+
+      & ::v-deep path:nth-child(1) {
+        animation: rotateGemColors 3s linear infinite alternate;
+      }
     }
+  }
+
+  .gold {
+    width: 88px;
   }
 
   .message-count {
