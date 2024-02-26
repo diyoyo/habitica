@@ -342,10 +342,10 @@
           >
             <div
               v-b-tooltip.hover.bottom="$t('mysticHourglassesTooltip')"
-              class="top-menu-icon svg-icon hg-margin"
+              class="top-menu-icon svg-icon"
               v-html="icons.hourglasses"
             ></div>
-            <span class="value">{{ userHourglasses }}</span>
+            <span class="hg-value">{{ userHourglasses }}</span>
           </div>
           <div class="item-with-icon gem">
             <a
@@ -698,11 +698,6 @@ body.modal-open #habitica-menu {
       fill: #FFB445; /* Yellow */
     }
   }
-
-  .hg-margin {
-    margin-right: -4px !important;
-  }
-
   .gem:hover {
     cursor: pointer;
 
@@ -710,9 +705,15 @@ body.modal-open #habitica-menu {
       animation: rotateGemColors 3s linear infinite alternate;
     }
   }
-  .value {
+
+  .hg-value {
+    margin-left: 4px;
     margin-right: 24px;
+  }
+
+  .value {
     margin-left: 8px;
+    margin-right: 24px;
   }
 
   .sync {
