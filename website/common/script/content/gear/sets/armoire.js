@@ -1784,7 +1784,7 @@ const releaseDates = {
   greenTrapper: '2023-12-05T08:00-05:00',
   schoolUniform: '2024-01-04T08:00-05:00',
   whiteLoungeWear: '2024-02-06T08:00-05:00',
-  hatterSet: '2024-02-05T08:00-05:00', // canonical 03-05
+  hatterSet: '2024-03-05T08:00-05:00',
 };
 
 forEach({
