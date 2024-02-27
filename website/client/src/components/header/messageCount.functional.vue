@@ -28,6 +28,7 @@
 
 .message-count.top-count {
   position: absolute;
+  left: 12px;
   right: 0.3em;
   top: -0.8em;
   padding: 0.2em;
