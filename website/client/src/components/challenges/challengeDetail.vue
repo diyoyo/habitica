@@ -223,6 +223,7 @@
         </button>
       </div>
       <div
+        v-if="!isOfficial"
         class="button-container"
       >
         <button
@@ -466,6 +467,10 @@ export default {
     chatRevocation () {
       return this.user.flags.chatRevoked
         && this.challenge.group && this.challenge.group.name === 'Tavern';
+    },
+    isOfficial () {
+      return !this.challenge || this.challenge.official
+        || this.challenge.categories?.some(category => category.name === 'habitica_official');
     },
   },
   watch: {
