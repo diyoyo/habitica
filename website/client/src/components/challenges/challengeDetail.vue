@@ -223,7 +223,7 @@
         </button>
       </div>
       <div
-        v-show="!isOfficial"
+        v-if="!isOfficial"
         class="button-container"
       >
         <button
