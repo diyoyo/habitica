@@ -34,7 +34,7 @@ export default {
     }
     : {},
 
-  availableSpells: CURRENT_EVENT && moment().isBetween('2024-03-18T08:00-04:00', CURRENT_EVENT.end) // 04-18
+  availableSpells: CURRENT_EVENT && moment().isBetween('2024-02-18T08:00-04:00', CURRENT_EVENT.end) // 04-18
     ? [
       'shinySeed',
     ]

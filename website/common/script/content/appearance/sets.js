@@ -12,7 +12,7 @@ export default prefill({
   pastelHairColors: { setPrice: 5, availableUntil: '2016-01-01' },
   rainbowHairColors: { setPrice: 5, text: t('rainbowColors') },
   shimmerHairColors: {
-    setPrice: 5, availableFrom: '2024-04-166T08:00-05:00', availableUntil: EVENTS.spring2024.end, text: t('shimmerColors'),
+    setPrice: 5, availableFrom: '2024-02-166T08:00-05:00', availableUntil: EVENTS.spring2024.end, text: t('shimmerColors'),
   },
   hauntedHairColors: {
     setPrice: 5, availableFrom: '2023-10-03T08:00-04:00', availableUntil: EVENTS.fall2023.end, text: t('hauntedColors'),
@@ -23,7 +23,7 @@ export default prefill({
   rainbowSkins: { setPrice: 5, text: t('rainbowSkins') },
   animalSkins: { setPrice: 5, text: t('animalSkins') },
   pastelSkins: {
-    setPrice: 5, availableFrom: '2024-04-16T08:00-05:00', availableUntil: EVENTS.spring2024.end, text: t('pastelSkins'),
+    setPrice: 5, availableFrom: '2024-02-16T08:00-05:00', availableUntil: EVENTS.spring2024.end, text: t('pastelSkins'),
   },
   spookySkins: { setPrice: 5, availableUntil: '2016-01-01', text: t('spookySkins') },
   supernaturalSkins: {
