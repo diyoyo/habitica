@@ -142,6 +142,22 @@
     &.locked .price {
       opacity: 0.5;
     }
+
+    .hair, .facial-hair, .shirt, .skin {
+      height: 68px;
+    }
+
+    .hair {
+      background-position: -24px -2px;
+    }
+
+    .facial-hair, .skin {
+      background-position: -24px -10px;
+    }
+
+    .shirt {
+      background-position: -23px -32px;
+    }
   }
 
   .image {

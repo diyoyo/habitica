@@ -235,7 +235,7 @@ export default function getItemInfo (user, type, item, officialPinnedItems, lang
     case 'gear':
       // spread operator not available
       itemInfo = Object.assign(getDefaultGearProps(item, language), {
-        value: item.twoHanded ? 2 : 1,
+        value: item.twoHanded || item.gearSet === 'animal' ? 2 : 1,
         currency: 'gems',
         pinType: 'gear',
       });
@@ -376,6 +376,60 @@ export default function getItemInfo (user, type, item, officialPinnedItems, lang
         currency: 'hourglasses',
         path: `timeTravelStable.${item.type}.${item.key}`,
         pinType: 'timeTravelersStable',
+      };
+      break;
+    }
+    case 'hairColor': {
+      itemInfo = {
+        key: item.key,
+        class: `hair hair_bangs_${user.preferences.hair.bangs}_${item.key}`,
+        value: item.price,
+        currency: 'gems',
+      };
+      break;
+    }
+    case 'hairBase': {
+      itemInfo = {
+        key: `hair-base-${item.key}`,
+        class: `hair hair_base_${item.key}_${user.preferences.hair.color}`,
+        value: item.price,
+        currency: 'gems',
+      };
+      break;
+    }
+    case 'mustache': {
+      itemInfo = {
+        key: `mustache-${item.key}`,
+        class: `facial-hair hair_mustache_${item.key}_${user.preferences.hair.color}`,
+        value: item.price,
+        currency: 'gems',
+      };
+      break;
+    }
+    case 'beard': {
+      itemInfo = {
+        key: `beard-${item.key}`,
+        class: `facial-hair hair_beard_${item.key}_${user.preferences.hair.color}`,
+        value: item.price,
+        currency: 'gems',
+      };
+      break;
+    }
+    case 'skin': {
+      itemInfo = {
+        key: item.key,
+        class: `skin skin_${item.key}`,
+        value: item.price,
+        currency: 'gems',
+      };
+      break;
+    }
+    case 'shirt': {
+      itemInfo = {
+        key: item.key,
+        class: `shirt ${user.preferences.size}_shirt_${item.key}`,
+        value: item.price,
+        currency: 'gems',
       };
       break;
     }
