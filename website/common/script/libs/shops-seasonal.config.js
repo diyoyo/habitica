@@ -34,13 +34,13 @@ export default {
     }
     : {},
 
-  availableSpells: CURRENT_EVENT && moment().isBetween('2024-04-18T08:00-05:00', CURRENT_EVENT.end)
+  availableSpells: CURRENT_EVENT && moment().isBetween('2024-03-06T00:00-04:00', CURRENT_EVENT.end) // 04-16
     ? [
       'shinySeed',
     ]
     : [],
 
-  availableQuests: CURRENT_EVENT && moment().isBetween('2024-04-18T08:00-05:00', CURRENT_EVENT.end)
+  availableQuests: CURRENT_EVENT && moment().isBetween('2024-03-06T00:00-04:00', CURRENT_EVENT.end) // 04-16
     ? [
       'egg',
     ]

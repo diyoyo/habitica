@@ -10,13 +10,13 @@ const gemsPromo = {
 
 export const EVENTS = {
   noEvent: {
-    start: '2024-05-01T00:00-05:00',
-    end: '2024-06-20T08:00-05:00',
+    start: '2024-05-01T00:00-04:00',
+    end: '2024-06-20T23:59:00-04:00',
     season: 'normal',
     npcImageSuffix: '',
   },
   spring2024: {
-    start: '2024-03-21T00:00-04:00',
+    start: '2024-03-06T00:00-04:00', // 03-21
     end: '2024-04-30T23:59-04:00',
     npcImageSuffix: '_spring',
     season: 'spring',
