@@ -15,6 +15,15 @@ export const EVENTS = {
     season: 'normal',
     npcImageSuffix: '',
   },
+  aprilFoolsQuest2024: {
+    start: '2024-03-05T00:00-04:00',
+    end: '2024-04-30T23:59-04:00',
+  },
+  aprilFools2024: {
+    start: '2024-03-01T00:00-04:00',
+    end: '2024-04-02T23:59-04:00',
+    aprilFools: 'Fungus',
+  },
   spring2024: {
     start: '2024-03-06T00:00-04:00', // 03-21
     end: '2024-04-30T23:59-04:00',
