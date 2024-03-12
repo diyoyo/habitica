@@ -25,7 +25,7 @@ export const EVENTS = {
     aprilFools: 'Fungus',
   },
   spring2024: {
-    start: '2024-03-06T00:00-04:00', // 03-21
+    start: '2024-03-21T00:00-04:00',
     end: '2024-04-30T23:59-04:00',
     npcImageSuffix: '_spring',
     season: 'spring',
