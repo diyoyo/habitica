@@ -11,18 +11,14 @@ const gemsPromo = {
 export const EVENTS = {
   noEvent: {
     start: '2024-05-01T00:00-04:00',
-    end: '2024-06-20T23:59:00-04:00',
+    end: '2024-06-20T23:59-04:00',
     season: 'normal',
     npcImageSuffix: '',
   },
-  aprilFoolsQuest2024: {
-    start: '2024-03-05T00:00-04:00',
-    end: '2024-04-30T23:59-04:00',
-  },
   aprilFools2024: {
-    start: '2024-03-01T00:00-04:00',
-    end: '2024-04-02T23:59-04:00',
-    aprilFools: 'Fungus',
+    start: '2024-04-01T00:00-04:00',
+    end: '2024-04-02T20:00-04:00',
+    aprilFools: 'Fungi',
   },
   spring2024: {
     start: '2024-03-21T00:00-04:00',
