@@ -187,7 +187,7 @@ const animalSetAchievs = {
     icon: 'achievement-cats',
     titleKey: 'achievementCats',
     textKey: 'achievementCatsText',
-    release: '2024-05-16T08:00-04:00',
+    release: '2024-04-01T08:00-04:00',
   },
   dinosaurDynasty: {
     icon: 'achievement-dinosaurDynasty',
