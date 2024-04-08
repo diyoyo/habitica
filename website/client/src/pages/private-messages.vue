@@ -852,7 +852,7 @@ export default {
       this.canLoadMoreConversations = loadedConversations.length === CONVERSATIONS_PER_PAGE;
       this.loadedConversations.push(...loadedConversations);
     },
-    async messageLiked (message) {
+    messageLiked (message) {
       const messages = this.messagesByConversation[this.selectedConversation.key];
 
       const chatIndex = findIndex(messages, chatMessage => chatMessage.id === message.id);
@@ -932,8 +932,12 @@ export default {
       }).then(response => {
         const newMessage = response.data.data.message;
         const messageToReset = messages[messages.length - 1];
-        messageToReset.id = newMessage.id; // just set the id, all other infos already set
-        messageToReset.text = newMessage.text; // handle mentions
+
+        // just set the id, all other infos already set
+        messageToReset.id = newMessage.id;
+        messageToReset.text = newMessage.text;
+        messageToReset.uniqueMessageId = newMessage.uniqueMessageId;
+
         Object.assign(messages[messages.length - 1], messageToReset);
         this.updateConversationsCounter += 1;
       });
