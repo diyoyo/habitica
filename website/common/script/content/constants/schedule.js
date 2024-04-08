@@ -824,7 +824,7 @@ function makeMatcherClass () {
   };
 }
 
-export function getScheduleMatchingGroup (type, date) {
+export function getAllScheduleMatchingGroups (date) {
   const checkedDate = date || new Date();
   if (cacheDate !== null && (getDay(checkedDate) !== getDay(cacheDate)
     || getMonth(checkedDate) !== getMonth(cacheDate))) {
@@ -845,7 +845,12 @@ export function getScheduleMatchingGroup (type, date) {
       }
     });
   }
-  if (!cachedScheduleMatchers[type]) {
+  return cachedScheduleMatchers;
+}
+
+export function getScheduleMatchingGroup (type, date) {
+  const matchingGroups = getAllScheduleMatchingGroups(date);
+  if (!matchingGroups[type]) {
     return {
       items: [],
       match () {
@@ -853,7 +858,7 @@ export function getScheduleMatchingGroup (type, date) {
       },
     };
   }
-  return cachedScheduleMatchers[type];
+  return matchingGroups[type];
 }
 
 export function getCurrentGalaKey (date) {
